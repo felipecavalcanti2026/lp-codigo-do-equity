@@ -275,17 +275,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
 .proof .it{text-align:center}
 .host .stat,.fact{text-align:center}
 
-/* Foto do topo sem moldura, com sombreado nas bordas */
-.portrait .frame{border-radius:0;box-shadow:none;background:none;overflow:visible;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 66%,transparent 97%),linear-gradient(to right,transparent 0,#000 16%,#000 84%,transparent 100%);
-  -webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 66%,transparent 97%),linear-gradient(to right,transparent 0,#000 16%,#000 84%,transparent 100%);mask-composite:intersect}
-.portrait .frame::after{display:none}
-.portrait::before{content:"";position:absolute;inset:8% 6% 4%;background:radial-gradient(closest-side,rgba(18,34,48,.16),transparent);filter:blur(30px);z-index:-1}
-.portrait .tag{text-align:center;color:var(--ink);margin-top:-6px;position:relative;z-index:2}
-.portrait .tag small{color:var(--gold)}
-.portrait .badge-float{right:0;top:48px}
 .hero{overflow:hidden}
-@media (max-width:860px){.portrait{max-width:330px}.hero .portrait .frame{aspect-ratio:4/5}.hero .portrait{max-width:330px}.portrait .badge-float{right:-6px;top:30px;padding:10px 14px}.portrait .badge-float b{font-size:24px}}
 
 /* Responsivo */
 @media (max-width:1024px){
@@ -356,6 +346,31 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
   .block .mod-title{justify-content:center;text-align:center}
   .block .lede{text-align:center}
 }
+
+/* Hero: foto expandida até a borda, sem moldura */
+.portrait::before,.portrait .frame::after{display:none}
+.portrait .frame{border-radius:0;box-shadow:none;background:#cdd2d8}
+.portrait .tag{position:absolute;left:32px;bottom:30px;z-index:2;color:var(--ink);text-align:left;background:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 12px 30px -12px rgba(18,34,48,.35)}
+.portrait .tag small{color:var(--gold)}
+.portrait .tag strong{font-size:22px}
+@media (min-width:861px){
+  .hero{min-height:calc(100vh - 72px);display:flex;align-items:center}
+  .hero .wrap{position:static;display:block;width:100%}
+  .hero .wrap>div:first-child{max-width:min(600px,calc(52vw - 40px))}
+  .portrait{position:absolute;top:0;right:0;bottom:0;width:44vw;max-width:none;margin:0}
+  .portrait .frame{position:absolute;inset:0;aspect-ratio:auto}
+  .portrait img{object-position:center 18%}
+  .portrait .badge-float{right:auto;left:-56px;top:22%;bottom:auto}
+}
+@media (max-width:860px){
+  .hero .portrait{max-width:none;width:auto;margin:8px -24px 0}
+  .hero .portrait .frame{aspect-ratio:4/5}
+  .portrait .tag{left:16px;bottom:16px}
+  .hero{padding-bottom:0}
+  .portrait .tag strong{font-size:19px}
+  .portrait .badge-float{right:16px;top:16px}
+}
+@media (max-width:560px){ .hero .portrait{margin:8px -16px 0} }
 </style>
 </head>
 <body>
