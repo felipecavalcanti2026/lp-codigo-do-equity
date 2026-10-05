@@ -56,6 +56,9 @@ em.wine{font-style:italic;color:var(--wine)}
 .btn:hover .arr{transform:translateX(4px)}
 .btn-gold{background:linear-gradient(135deg,var(--gold-soft),var(--gold) 55%,var(--gold-dark));color:var(--navy-deep);box-shadow:0 10px 30px -10px rgba(189,139,86,.7)}
 .btn-gold:hover{background:var(--gold-soft);color:var(--navy-deep)}
+.btn-gold{animation:goldpulse 2.8s ease-in-out infinite}
+.btn-gold:hover{animation-play-state:paused}
+@keyframes goldpulse{0%,100%{box-shadow:0 10px 30px -10px rgba(189,139,86,.7),0 0 0 0 rgba(189,139,86,.38)}50%{box-shadow:0 10px 30px -10px rgba(189,139,86,.7),0 0 0 8px rgba(189,139,86,0)}}
 .micro{font-size:13px;color:var(--ink-3);margin-top:14px;display:flex;align-items:center;gap:8px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--wine);box-shadow:0 0 0 0 rgba(115,44,63,.5);animation:pulse 2s infinite;flex:none}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(115,44,63,.45)}70%{box-shadow:0 0 0 9px rgba(115,44,63,0)}100%{box-shadow:0 0 0 0 rgba(115,44,63,0)}}
@@ -69,7 +72,7 @@ em.wine{font-style:italic;color:var(--wine)}
 .nav{display:flex;gap:30px}
 .nav a{text-decoration:none;font-size:13px;color:var(--ink-2);transition:color .2s}
 .nav a:hover{color:var(--gold)}
-.hdr .btn{padding:12px 22px;font-size:11px;box-shadow:none}
+.hdr .btn{padding:12px 22px;font-size:11px}
 
 /* Hero */
 .hero{padding:56px 0 88px;position:relative}
@@ -306,7 +309,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
       <a href="#encontro">A Imersão</a>
       <a href="#cronograma">Cronograma</a>
     </nav>
-    <a href="#convite" class="btn">Garantir vaga</a>
+    <a href="#convite" class="btn btn-gold">Garantir vaga</a>
   </div>
 </header>
 
@@ -321,7 +324,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
       <p class="lead">Para empresários com <strong>empresas lucrativas</strong> que entenderam: crescer só com o próprio caixa, mais contratações e decisões centralizadas no fundador não constrói uma empresa escalável, replicável ou vendável.</p>
       <p class="lead">Conheça o <strong>Código do Equity</strong>: o modelo que os maiores negócios do mundo usam para crescer, e o método que transforma empresa que dá lucro em <strong>ecossistema de negócios</strong>, sem que todo investimento saia do seu caixa.</p>
       <div class="cta">
-        <a href="#convite" class="btn">Garantir minha vaga <span class="arr">→</span></a>
+        <a href="#convite" class="btn btn-gold">Garantir minha vaga <span class="arr">→</span></a>
         <p class="micro">Conteúdo de equity e vendas, ambiente sensorial e brindes especiais.</p>
       </div>
       <div class="facts">
@@ -369,7 +372,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
       <div class="turn">
         <p>Enquanto isso, algumas empresas crescem com <strong>estruturas estratégicas</strong> que abrem novos negócios, multiplicam ativos e aceleram a expansão sem depender só do próprio caixa. <strong>É esse modelo que você conhecerá na imersão.</strong></p>
       </div>
-      <div style="margin-top:26px"><a href="#convite" class="btn">Garantir minha vaga <span class="arr">→</span></a></div>
+      <div style="margin-top:26px"><a href="#convite" class="btn btn-gold">Garantir minha vaga <span class="arr">→</span></a></div>
     </div>
   </div>
 </section>
@@ -493,7 +496,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
     <h2>Talvez o problema da sua empresa não seja vender mais.</h2>
     <p>Se ela já gera lucro, o próximo passo talvez não seja aumentar o esforço, e sim ampliar o modelo pelo qual ela cresce.</p>
     <div class="cta">
-      <a href="#convite" class="btn">Garantir minha vaga <span class="arr">→</span></a>
+      <a href="#convite" class="btn btn-gold">Garantir minha vaga <span class="arr">→</span></a>
       <p class="micro"><span class="dot"></span>Segunda edição · Imersão com vagas limitadas.</p>
     </div>
   </div>
@@ -587,7 +590,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
   </div>
 </footer>
 
-<div class="sticky-cta" id="sticky"><a href="#convite" class="btn">Garantir minha vaga <span class="arr">→</span></a></div>
+<div class="sticky-cta" id="sticky"><a href="#convite" class="btn btn-gold">Garantir minha vaga <span class="arr">→</span></a></div>
 
 <script>
 (function(){
