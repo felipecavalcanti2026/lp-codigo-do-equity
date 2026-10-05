@@ -271,6 +271,22 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
   .tl .step::before{left:50%;transform:translateX(-50%)}
 }
 
+/* Faixa de números centralizada */
+.proof .it{text-align:center}
+.host .stat,.fact{text-align:center}
+
+/* Foto do topo sem moldura, com sombreado nas bordas */
+.portrait .frame{border-radius:0;box-shadow:none;background:none;overflow:visible;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 66%,transparent 97%),linear-gradient(to right,transparent 0,#000 16%,#000 84%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 66%,transparent 97%),linear-gradient(to right,transparent 0,#000 16%,#000 84%,transparent 100%);mask-composite:intersect}
+.portrait .frame::after{display:none}
+.portrait::before{content:"";position:absolute;inset:8% 6% 4%;background:radial-gradient(closest-side,rgba(18,34,48,.16),transparent);filter:blur(30px);z-index:-1}
+.portrait .tag{text-align:center;color:var(--ink);margin-top:-6px;position:relative;z-index:2}
+.portrait .tag small{color:var(--gold)}
+.portrait .badge-float{right:0;top:48px}
+.hero{overflow:hidden}
+@media (max-width:860px){.portrait{max-width:330px}.hero .portrait .frame{aspect-ratio:4/5}.hero .portrait{max-width:330px}.portrait .badge-float{right:-6px;top:30px;padding:10px 14px}.portrait .badge-float b{font-size:24px}}
+
 /* Responsivo */
 @media (max-width:1024px){
   .nav{display:none}
@@ -389,8 +405,8 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
     <div class="portrait">
       <div class="frame">
         <img src="https://xn--cdigodoequity-blb.com.br/__l5e/assets-v1/1e3f81be-702a-4885-9398-1ebefda97c21/paloma.jpg" alt="Paloma Rodrigues, anfitriã do evento"/>
-        <div class="tag"><small>Anfitriã</small><strong>Paloma Rodrigues</strong></div>
       </div>
+      <div class="tag"><small>Anfitriã</small><strong>Paloma Rodrigues</strong></div>
       <div class="badge-float"><b>+400</b><span>empresas atendidas</span></div>
     </div>
   </div>
