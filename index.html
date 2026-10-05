@@ -524,7 +524,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
             <label class="f"><span>Empresa</span><input name="empresa" required placeholder="Nome da empresa" autocomplete="organization"/></label>
             <label class="f"><span>Telefone</span><input name="telefone" required type="tel" placeholder="(00) 00000-0000" autocomplete="tel"/></label>
             <label class="f"><span>E-mail</span><input name="email" required type="email" placeholder="voce@empresa.com" autocomplete="email"/></label>
-            <label class="f"><span>Faturamento médio</span><select name="faturamento_medio" required>
+            <label class="f full"><span>Faturamento médio</span><select name="faturamento_medio" required>
               <option value="" disabled selected>Selecione uma faixa</option>
               <option value="ate-500k">Até R$ 500 mil/ano</option>
               <option value="500k-1m">R$ 500 mil a R$ 1 milhão/ano</option>
@@ -533,28 +533,6 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
               <option value="5m-10m">R$ 5 a R$ 10 milhões/ano</option>
               <option value="acima-10m">Acima de R$ 10 milhões/ano</option>
             </select></label>
-            <label class="f"><span>Quantos funcionários?</span><select name="funcionarios" required>
-              <option value="" disabled selected>Selecione uma faixa</option>
-              <option value="1-5">1 a 5</option>
-              <option value="6-20">6 a 20</option>
-              <option value="21-50">21 a 50</option>
-              <option value="51-100">51 a 100</option>
-              <option value="100+">Acima de 100</option>
-            </select></label>
-            <label class="f"><span>Tem sócio?</span><select name="tem_socio" required>
-              <option value="" disabled selected>Selecione</option>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
-            </select></label>
-            <label class="f"><span>Indique o nome de quem convidou você</span><input name="convidado_por" placeholder="Nome de quem convidou (opcional)"/></label>
-            <label class="f full"><span>Qual é o seu foco hoje na sua empresa?</span><select name="foco_hoje" required>
-              <option value="" disabled selected>Selecione uma opção</option>
-              <option value="mais-vendas">Foco em mais vendas</option>
-              <option value="nova-unidade">Foco em Nova unidade</option>
-              <option value="novos-negocios">Foco em Novos Negócios</option>
-              <option value="organizar">Foco em Organizar</option>
-            </select></label>
-            <label class="f full"><span>Onde você quer estar daqui a 5 anos?</span><textarea name="onde_quer_estar_5_anos" required rows="3" placeholder="Descreva brevemente sua visão para os próximos 5 anos"></textarea></label>
           </div>
           <div class="submit">
             <button type="submit" class="btn btn-gold" id="sendBtn">Quero garantir minha vaga <span class="arr">→</span></button>
