@@ -43,6 +43,8 @@ p{margin:0}
 .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold)}
 .sec{padding:96px 0}
 .sec-head{max-width:720px;margin-bottom:48px}
+.sec-head h2,.band h2{text-wrap:balance}
+.sec-head p,.band p{text-wrap:pretty}
 .sec-head h2{font-family:var(--display);font-size:clamp(30px,4.2vw,46px);line-height:1.08;margin-top:16px}
 .sec-head p{margin-top:16px;color:var(--ink-2);font-size:17px}
 .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
@@ -203,7 +205,7 @@ em.wine{font-style:italic;color:var(--wine)}
 .checks li{display:flex;gap:12px;align-items:center;font-size:14px;color:rgba(255,255,255,.88)}
 .checks li::before{content:"";flex:none;width:20px;height:20px;border-radius:50%;background:rgba(189,139,86,.2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23d9bb8f' stroke-width='2.4'%3E%3Cpath d='M5.5 10.5l3 3 6-7'/%3E%3C/svg%3E") center/14px no-repeat}
 .form-main{background:#fff;padding:44px 40px}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;align-items:end}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;align-items:start}
 .fgrid .full{grid-column:1/-1}
 label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
 .f input,.f select,.f textarea{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:14px 16px;transition:border-color .2s,box-shadow .2s,background .2s;appearance:none;-webkit-appearance:none}
@@ -212,6 +214,11 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
 .f textarea{resize:vertical;min-height:92px}
 .f input::placeholder,.f textarea::placeholder{color:var(--ink-3)}
 .f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 4px rgba(189,139,86,.15)}
+.f.bad input,.f.bad select{border-color:var(--wine);background:#fff;box-shadow:0 0 0 4px rgba(115,44,63,.1)}
+.f.good input{border-color:#5c8a6a}
+.hint{display:block;font-size:12.5px;line-height:1.4;color:var(--wine);margin-top:6px;min-height:0}
+.hint:empty{display:none}
+.hint button{background:none;border:0;padding:0;color:var(--navy-deep);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer}
 .submit{margin-top:26px}
 .submit .btn{width:100%}
 .submit .btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
@@ -241,6 +248,28 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
 .reveal.in{opacity:1;transform:none}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* Centralização de títulos e textos de apoio */
+.sec-head{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head .eyebrow::after{content:"";width:22px;height:1px;background:var(--gold)}
+.sec-head p{max-width:620px;margin-left:auto;margin-right:auto}
+.diag{grid-template-columns:1fr;gap:44px}
+.diag .sec-head{position:static;margin:0 auto}
+.diag-body{max-width:860px;margin:0 auto;width:100%}
+.ways-label{text-align:center;font-size:15px;margin-bottom:18px}
+.turn{text-align:center}
+.diag-cta{margin-top:30px;display:flex;justify-content:center}
+.mod-title{justify-content:center;flex-wrap:wrap;text-align:center}
+.block .mod-title{justify-content:flex-start;text-align:left}
+.host-txt{text-align:left}
+.host-txt .eyebrow{justify-content:flex-start}
+
+.grid4 .card{text-align:center}
+.grid4 .card .num{margin:0 auto}
+@media (min-width:1025px){
+  .tl .step{text-align:center;padding-left:6px;padding-right:6px}
+  .tl .step::before{left:50%;transform:translateX(-50%)}
+}
 
 /* Responsivo */
 @media (max-width:1024px){
@@ -291,6 +320,25 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
   .host .stat b{font-size:28px}
   .block{padding:22px 16px}
   .band .cta .btn{width:100%}
+}
+@media (max-width:860px){
+  .hero .wrap>div:first-child{text-align:center}
+  .hero .pill{justify-content:center}
+  .hero .lead,.hero .punch{margin-left:auto;margin-right:auto}
+  .hero .punch{border-left:0;padding-left:0;border-top:2px solid var(--gold);padding-top:16px;max-width:420px}
+  .hero .cta{display:flex;flex-direction:column;align-items:center}
+  .hero .micro{justify-content:center;text-align:center}
+  .facts{margin-left:auto;margin-right:auto;text-align:left}
+  .host-txt{text-align:center}
+  .host-txt .eyebrow{justify-content:center}
+  .host-txt .eyebrow::after{content:"";width:22px;height:1px;background:var(--gold)}
+  .host .ph{margin:0 auto}
+  .host .stats{text-align:left}
+  .form-side{text-align:center}
+  .form-side .eyebrow::after{content:"";width:22px;height:1px;background:var(--gold)}
+  .checks{justify-items:center}
+  .block .mod-title{justify-content:center;text-align:center}
+  .block .lede{text-align:center}
 }
 </style>
 </head>
@@ -366,7 +414,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
       <h2>O problema da sua empresa não é vender mais.</h2>
       <p><em class="wine">É não ter um modelo de crescimento estruturado que a faça ir além.</em></p>
     </div>
-    <div class="reveal">
+    <div class="reveal diag-body">
       <p class="ways-label">A maioria dos empresários acredita que só existem estes caminhos para expandir:</p>
       <div class="ways">
         <div class="way"><i>01</i><p>Reinvestindo todo o lucro.</p></div>
@@ -377,7 +425,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
       <div class="turn">
         <p>Enquanto isso, algumas empresas crescem com <strong>estruturas estratégicas</strong> que abrem novos negócios, multiplicam ativos e aceleram a expansão sem depender só do próprio caixa. <strong>É esse modelo que você conhecerá na imersão.</strong></p>
       </div>
-      <div style="margin-top:26px"><a href="#convite" class="btn btn-gold">Garantir minha vaga <span class="arr">→</span></a></div>
+      <div class="diag-cta"><a href="#convite" class="btn btn-gold">Garantir minha vaga <span class="arr">→</span></a></div>
     </div>
   </div>
 </section>
@@ -457,7 +505,7 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
 <section class="sec exp-bg" id="anfitria">
   <div class="wrap host">
     <div class="ph reveal"><img src="https://xn--cdigodoequity-blb.com.br/__l5e/assets-v1/1e3f81be-702a-4885-9398-1ebefda97c21/paloma.jpg" alt="Paloma Rodrigues" loading="lazy"/></div>
-    <div class="reveal">
+    <div class="reveal host-txt">
       <div class="eyebrow">04 · Anfitriã</div>
       <h2>Paloma Rodrigues</h2>
       <div class="role">Advogada Empresarial · Founder</div>
@@ -528,8 +576,8 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
           <div class="fgrid">
             <label class="f"><span>Nome</span><input name="nome" required placeholder="Seu nome completo" autocomplete="name"/></label>
             <label class="f"><span>Empresa</span><input name="empresa" required placeholder="Nome da empresa" autocomplete="organization"/></label>
-            <label class="f"><span>Telefone</span><input name="telefone" required type="tel" placeholder="(00) 00000-0000" autocomplete="tel"/></label>
-            <label class="f"><span>E-mail</span><input name="email" required type="email" placeholder="voce@empresa.com" autocomplete="email"/></label>
+            <label class="f" id="f-tel"><span>Telefone</span><input name="telefone" required type="tel" inputmode="numeric" maxlength="20" placeholder="(00) 00000-0000" autocomplete="tel"/><small class="hint" id="h-tel"></small></label>
+            <label class="f" id="f-mail"><span>E-mail</span><input name="email" required type="email" placeholder="voce@empresa.com" autocomplete="email" autocapitalize="off" spellcheck="false"/><small class="hint" id="h-mail"></small></label>
             <label class="f full"><span>Faturamento médio</span><select name="faturamento_medio" required>
               <option value="" disabled selected>Selecione uma faixa</option>
               <option value="ate-500k">Até R$ 500 mil/ano</option>
@@ -616,10 +664,100 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
     return i? i.charAt(0).toUpperCase()+i.slice(1) : '';
   }
 
+
+  // ===== Validação de telefone (DDD brasileiro) e e-mail (sintaxe + domínio que recebe e-mail) =====
+  var DDDS=[11,12,13,14,15,16,17,18,19,21,22,24,27,28,31,32,33,34,35,37,38,41,42,43,44,45,46,47,48,49,51,53,54,55,61,62,63,64,65,66,67,68,69,71,73,74,75,77,79,81,82,83,84,85,86,87,88,89,91,92,93,94,95,96,97,98,99];
+  var DESCARTAVEIS=['mailinator.com','yopmail.com','10minutemail.com','guerrillamail.com','sharklasers.com','temp-mail.org','tempmail.com','trashmail.com','getnada.com','dispostable.com','maildrop.cc','throwawaymail.com','fakeinbox.com','emailondeck.com','mintemail.com','tempmailo.com','mohmal.com'];
+  var CORRECOES={'gmial.com':'gmail.com','gmai.com':'gmail.com','gmal.com':'gmail.com','gmil.com':'gmail.com','gamil.com':'gmail.com','gnail.com':'gmail.com','gmaill.com':'gmail.com','gmail.co':'gmail.com','gmail.con':'gmail.com','gmail.com.br':'gmail.com','gmail.cm':'gmail.com','hotmal.com':'hotmail.com','hotmial.com':'hotmail.com','hotmai.com':'hotmail.com','hotmail.co':'hotmail.com','hotmail.con':'hotmail.com','homail.com':'hotmail.com','hotmil.com':'hotmail.com','outlok.com':'outlook.com','outloo.com':'outlook.com','outlook.co':'outlook.com','outlook.con':'outlook.com','yahooo.com':'yahoo.com','yaho.com':'yahoo.com','yahoo.co':'yahoo.com','yahoo.com.b':'yahoo.com.br','iclod.com':'icloud.com','icloud.co':'icloud.com','icoud.com':'icloud.com','uol.com':'uol.com.br','bol.com':'bol.com.br','terra.com':'terra.com.br'};
+  var telIn=form.querySelector('[name=telefone]'), mailIn=form.querySelector('[name=email]');
+  var fTel=document.getElementById('f-tel'), fMail=document.getElementById('f-mail');
+  var hTel=document.getElementById('h-tel'), hMail=document.getElementById('h-mail');
+  var mxCache={};
+
+  function setState(field,hint,msg){
+    hint.innerHTML=msg||'';
+    field.classList.toggle('bad',!!msg);
+    field.classList.toggle('good',!msg);
+  }
+  function soDigitos(v){ return (v||'').replace(/\D/g,''); }
+  function normalizaTel(v){
+    var n=soDigitos(v);
+    if((n.length===12||n.length===13) && n.indexOf('55')===0) n=n.slice(2);
+    if((n.length===11||n.length===12) && n.charAt(0)==='0') n=n.slice(1);
+    return n;
+  }
+  function mascara(n){
+    if(n.length>11) return '+'+n.slice(0,13);
+    if(n.length<=2) return n.length?'('+n:'';
+    if(n.length<=6) return '('+n.slice(0,2)+') '+n.slice(2);
+    if(n.length<=10) return '('+n.slice(0,2)+') '+n.slice(2,6)+'-'+n.slice(6);
+    return '('+n.slice(0,2)+') '+n.slice(2,7)+'-'+n.slice(7);
+  }
+  function erroTel(v){
+    var n=normalizaTel(v);
+    if(!n) return 'Informe seu telefone com DDD.';
+    if(n.length<10) return 'Telefone incompleto. Use DDD + número, ex.: (83) 99999-9999.';
+    if(n.length>11) return 'Telefone com dígitos a mais. Confira o número.';
+    if(DDDS.indexOf(+n.slice(0,2))<0) return 'DDD '+n.slice(0,2)+' não existe. Confira o código da sua cidade.';
+    var num=n.slice(2);
+    if(n.length===11 && num.charAt(0)!=='9') return 'Celular deve começar com 9 depois do DDD.';
+    if(n.length===10 && !/^[2-5]/.test(num)) return 'Número inválido. Se for celular, inclua o 9 na frente.';
+    if(/^(\d)\1+$/.test(num)) return 'Número inválido. Confira o telefone.';
+    return '';
+  }
+  telIn.addEventListener('input',function(){
+    var n=soDigitos(telIn.value);
+    if(n.length===13 && n.indexOf('55')===0) n=n.slice(2);
+    telIn.value=mascara(n);
+    if(fTel.classList.contains('bad')) setState(fTel,hTel,erroTel(telIn.value));
+  });
+  telIn.addEventListener('blur',function(){ if(telIn.value){ var n=normalizaTel(telIn.value); if(n.length<=11) telIn.value=mascara(n); setState(fTel,hTel,erroTel(telIn.value)); } });
+
+  function erroMailSintaxe(v){
+    v=(v||'').trim().toLowerCase();
+    if(!v) return 'Informe seu e-mail.';
+    if(!/^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/.test(v) || /\.\./.test(v) || /^\.|\.@|@\.|@-/.test(v)) return 'E-mail inválido. Confira o endereço.';
+    var dom=v.split('@')[1];
+    if(CORRECOES[dom]) return 'Você quis dizer <button type="button" data-fix="'+v.split('@')[0]+'@'+CORRECOES[dom]+'">'+v.split('@')[0]+'@'+CORRECOES[dom]+'</button>?';
+    if(DESCARTAVEIS.indexOf(dom)>=0) return 'Use um e-mail permanente, não temporário.';
+    return '';
+  }
+  // Consulta se o domínio do e-mail tem servidor de e-mail (registro MX). Em falha de rede, não bloqueia o lead.
+  function dominioRecebeEmail(dom){
+    if(mxCache[dom]!==undefined) return Promise.resolve(mxCache[dom]);
+    var ctrl=new AbortController(); var t=setTimeout(function(){ctrl.abort();},4000);
+    return fetch('https://dns.google/resolve?name='+encodeURIComponent(dom)+'&type=MX',{signal:ctrl.signal})
+      .then(function(r){return r.json();})
+      .then(function(j){
+        var ok=j.Status===0 && (j.Answer||[]).some(function(a){return a.type===15 && !/^0 \.$/.test(a.data);});
+        mxCache[dom]=ok; return ok;
+      })
+      .catch(function(){ return true; })
+      .finally(function(){ clearTimeout(t); });
+  }
+  async function erroMail(v){
+    var e=erroMailSintaxe(v); if(e) return e;
+    var dom=v.trim().toLowerCase().split('@')[1];
+    var ok=await dominioRecebeEmail(dom);
+    return ok? '' : 'O domínio "'+dom+'" não recebe e-mails. Confira o endereço.';
+  }
+  hMail.addEventListener('click',function(ev){
+    var b=ev.target.closest('[data-fix]'); if(!b) return;
+    ev.preventDefault(); mailIn.value=b.getAttribute('data-fix'); erroMail(mailIn.value).then(function(m){setState(fMail,hMail,m);});
+  });
+  mailIn.addEventListener('blur',function(){ var v=mailIn.value; if(v) erroMail(v).then(function(m){ if(mailIn.value===v) setState(fMail,hMail,m); }); });
+  mailIn.addEventListener('input',function(){ if(fMail.classList.contains('bad')){ var m=erroMailSintaxe(mailIn.value); if(!m) setState(fMail,hMail,''); } });
+
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if(sending) return;
     if(!form.checkValidity()){ form.reportValidity(); return; }
+    var eTel=erroTel(telIn.value); setState(fTel,hTel,eTel);
+    btn.disabled=true; btn.firstChild.textContent='Verificando… ';
+    var eMail=await erroMail(mailIn.value); setState(fMail,hMail,eMail);
+    btn.disabled=false; btn.firstChild.textContent='Quero garantir minha vaga ';
+    if(eTel||eMail){ (eTel?telIn:mailIn).focus(); return; }
+    telIn.value=mascara(normalizaTel(telIn.value));
     var d=Object.fromEntries(new FormData(form).entries());
     err.hidden=true; sending=true; btn.disabled=true; btn.firstChild.textContent='Enviando… ';
     var body={
