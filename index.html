@@ -413,6 +413,16 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
 @media (max-width:1024px){.pillars{grid-template-columns:1fr 1fr}}
 @media (max-width:860px){.speakers,.tickets{grid-template-columns:1fr}.host-txt .tagline{margin-left:auto;margin-right:auto}.logo img{height:32px}}
 @media (max-width:560px){.pillars,.aud{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr;gap:8px}.gallery img{aspect-ratio:3/4;border-radius:12px}.ticket .price{font-size:46px}.speaker{padding:28px 18px}}
+
+/* Carrossel contínuo do último encontro */
+.marquee{overflow:hidden;margin:8px 0 0;-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:18px;width:max-content;animation:marquee 48s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track img{height:420px;width:auto;aspect-ratio:427/640;object-fit:cover;border-radius:18px;flex:none;transition:transform .5s ease}
+.marquee-track img:hover{transform:scale(1.03)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 9px))}}
+@media (max-width:560px){.marquee-track{gap:10px;animation-duration:36s}.marquee-track img{height:300px;border-radius:14px}@keyframes marquee{to{transform:translateX(calc(-50% - 5px))}}}
+@media (prefers-reduced-motion:reduce){.marquee{overflow-x:auto}.marquee-track{animation:none!important}}
 </style>
 </head>
 <body>
@@ -696,14 +706,24 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
       <h2>Elegância presente em cada detalhe.</h2>
       <p>Confraria Equity · curadoria e experiência de alto padrão.</p>
     </div>
-    <div class="gallery reveal">
-      <img src="assets/encontro-1.jpg" alt="Brinde entre participantes do último encontro" loading="lazy" width="427" height="640"/>
-      <img src="assets/encontro-2.jpg" alt="Paloma Rodrigues com convidada no último encontro" loading="lazy" width="427" height="640"/>
-      <img src="assets/encontro-3.jpg" alt="Paloma Rodrigues no último encontro" loading="lazy" width="427" height="640"/>
-      <img src="assets/encontro-4.jpg" alt="Participantes aplaudindo no último encontro" loading="lazy" width="427" height="640"/>
-      <img src="assets/encontro-5.jpg" alt="Participante com a palavra no último encontro" loading="lazy" width="427" height="640"/>
-      <img src="assets/encontro-6.jpg" alt="Paloma Rodrigues conduzindo o último encontro" loading="lazy" width="427" height="640"/>
+  </div>
+  <div class="marquee reveal" aria-label="Fotos do último encontro">
+    <div class="marquee-track">
+      <img src="assets/encontro-1.jpg" alt="Brinde entre participantes do último encontro" width="427" height="640"/>
+      <img src="assets/encontro-2.jpg" alt="Paloma Rodrigues com convidada no último encontro" width="427" height="640"/>
+      <img src="assets/encontro-3.jpg" alt="Paloma Rodrigues no último encontro" width="427" height="640"/>
+      <img src="assets/encontro-4.jpg" alt="Participantes aplaudindo no último encontro" width="427" height="640"/>
+      <img src="assets/encontro-5.jpg" alt="Participante com a palavra no último encontro" width="427" height="640"/>
+      <img src="assets/encontro-6.jpg" alt="Paloma Rodrigues conduzindo o último encontro" width="427" height="640"/>
+      <img aria-hidden="true" src="assets/encontro-1.jpg" alt="" width="427" height="640"/>
+      <img aria-hidden="true" src="assets/encontro-2.jpg" alt="" width="427" height="640"/>
+      <img aria-hidden="true" src="assets/encontro-3.jpg" alt="" width="427" height="640"/>
+      <img aria-hidden="true" src="assets/encontro-4.jpg" alt="" width="427" height="640"/>
+      <img aria-hidden="true" src="assets/encontro-5.jpg" alt="" width="427" height="640"/>
+      <img aria-hidden="true" src="assets/encontro-6.jpg" alt="" width="427" height="640"/>
     </div>
+  </div>
+  <div class="wrap">
     <p class="pillars-note reveal">Um encontro pensado para relacionamento, posicionamento e conexão.</p>
   </div>
 </section>
