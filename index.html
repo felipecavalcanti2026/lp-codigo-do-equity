@@ -786,8 +786,8 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
 (function(){
   // ===== LINKS DO CHECKOUT — trocar pelos links reais =====
   var CHECKOUT={
-    normal:'',  // ex.: https://checkout.../ingresso-normal
-    vip:''      // ex.: https://checkout.../ingresso-vip
+    normal:'https://pay.hub.la/tVO2nQ2K093fgoc0MuYK',  // Hubla - Ingresso Padrão (R$ 297)
+    vip:'https://pay.hub.la/dKYe8hwaeKrbaa6hBZio'      // Hubla - Ingresso VIP (R$ 497)
   };
   var CONTENT='Imersao Expansao Solida';
   function px(){ if(typeof window.fbq==='function') window.fbq.apply(null, arguments); }
@@ -825,7 +825,8 @@ label.f span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;t
       a.href='#ingressos';
     }
     a.addEventListener('click',function(){
-      px('track','InitiateCheckout',{content_name:CONTENT+' - '+a.getAttribute('data-ticket'),value:+a.getAttribute('data-value'),currency:'BRL'});
+      // InitiateCheckout e Purchase sao disparados pelo pixel no checkout da Hubla
+      px('trackCustom','CliqueIngresso',{content_name:CONTENT+' - '+a.getAttribute('data-ticket'),value:+a.getAttribute('data-value'),currency:'BRL'});
     });
   });
 })();
